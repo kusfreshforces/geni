@@ -3,9 +3,9 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    const date = new Date();
-    const hours = (date.getHours() % 12) + 1;  // London is UTC + 1hr;
-    res.send(`
+  const date = new Date();
+  const hours = (date.getHours() % 12) + 1;  // London is UTC + 1hr;
+  res.send(`
       <!doctype html>
       <head>
         <title>Time</title>
@@ -21,9 +21,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-    const date = new Date();
-    const hours = (date.getHours() % 12) + 1;  // London is UTC + 1hr;
-    res.json({ bongs: 'BONG '.repeat(hours) });
+  const date = new Date();
+  const hours = (date.getHours() % 12) + 1;  // London is UTC + 1hr;
+  res.json({ bongs: 'BONG '.repeat(hours) });
 });
 
 exports.app = functions.https.onRequest(app);
